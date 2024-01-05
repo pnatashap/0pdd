@@ -89,9 +89,9 @@ GEM
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.1)
+    net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0)
+    net-smtp (0.4.0.1)
       net-protocol
     nokogiri (1.15.5)
       mini_portile2 (~> 2.8.2)
@@ -196,7 +196,7 @@ GEM
     test-unit (3.6.1)
       power_assert
     tilt (2.3.0)
-    timeout (0.4.0)
+    timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
@@ -226,7 +226,7 @@ DEPENDENCIES
   mail (= 2.8.1)
   matrix (= 0.4.2)
   mocha (= 2.1.0)
-  net-smtp (= 0.4.0)
+  net-smtp (= 0.4.0.1)
   nokogiri (= 1.15.5)
   octokit (= 8.0.0)
   pdd (= 0.23.2)
