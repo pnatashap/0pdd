@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 jobs:
   codecov:
     runs-on: ubuntu-22.04
@@ -14,7 +17,11 @@ jobs:
           ruby-version: '2.7'
       - run: bundle update
       - run: bundle exec rake
-      - uses: codecov/codecov-action@v4.0.0-beta.3
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codecov-report
+          path: coverage/.resultset.json
+      - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: coverage/.resultset.json
