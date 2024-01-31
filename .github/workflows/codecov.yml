@@ -16,7 +16,7 @@ jobs:
         with:
           ruby-version: '2.7'
       - run: bundle update
-      - run: bundle exec rake
+      - run: bundle exec rake test
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
