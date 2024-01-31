@@ -31,7 +31,6 @@ SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 
 require_relative '../0pdd'
 require 'test/unit'
-require 'minitest/autorun'
 
 def object(hash)
   json = hash.to_json
