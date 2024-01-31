@@ -26,8 +26,6 @@ require_relative 'objects/dynamo'
 
 ENV['RACK_ENV'] = 'test'
 
-task default: %i[check_outdated_gems clean test rubocop xcop copyright]
-
 require 'rake/testtask'
 desc 'Run all unit tests'
 Rake::TestTask.new(test: :dynamo) do |test|
@@ -98,3 +96,5 @@ task :check_outdated_gems do
     puts 'Some dependencies are outdated' unless ok
   end
 end
+
+task default: %i[check_outdated_gems clean test rubocop xcop copyright]
