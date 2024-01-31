@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'ostruct'
 require 'test/unit'
 require_relative '../objects/diff'
+require_relative 'test_helper'
 
 # Complicated diff test.
 class TestDiff < Test::Unit::TestCase

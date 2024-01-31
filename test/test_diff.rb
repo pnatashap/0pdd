@@ -22,6 +22,7 @@ require 'nokogiri'
 require 'ostruct'
 require 'test/unit'
 require_relative '../objects/diff'
+require_relative 'test_helper'
 
 # Diff test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
