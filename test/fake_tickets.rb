@@ -19,11 +19,12 @@
 # SOFTWARE.
 
 class FakeTickets
-  attr_reader :submitted, :closed
+  attr_reader :submitted, :closed, :messages
 
   def initialize
     @submitted = []
     @closed = []
+    @messages = []
   end
 
   def submit(puzzle)
@@ -34,5 +35,9 @@ class FakeTickets
   def close(puzzle)
     @closed << puzzle.xpath('id')[0].text
     true
+  end
+
+  def notify(ticket, text)
+    @messages << "#{ticket} #{text}"
   end
 end

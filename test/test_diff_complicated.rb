@@ -3,6 +3,7 @@ require 'ostruct'
 require 'test/unit'
 require_relative '../objects/diff'
 require_relative 'test_helper'
+require_relative 'fake_tickets'
 
 # Complicated diff test.
 class TestDiff < Test::Unit::TestCase
@@ -12,7 +13,7 @@ class TestDiff < Test::Unit::TestCase
   # but not covered by the test suite.
 
   def test_notification_on_parent_solved_with_others_unsolved
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     before = Nokogiri::XML(
       '<puzzles>
         <puzzle alive="true">
@@ -46,17 +47,5 @@ class TestDiff < Test::Unit::TestCase
       '999 2 puzzles [#100](), [#13]() are still not solved; solved: [#101]().',
       "Text is wrong: #{tickets.messages[0]}"
     )
-  end
-
-  class Tickets
-    attr_reader :messages
-
-    def initialize
-      @messages = []
-    end
-
-    def notify(ticket, text)
-      @messages << "#{ticket} #{text}"
-    end
   end
 end
