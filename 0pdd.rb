@@ -534,3 +534,5 @@ def process_request(vcs)
     )
   ).proceed
 end
+
+puts 'End of 0pdd file'
