@@ -22,6 +22,7 @@ require 'test/unit'
 require 'mocha/test_unit'
 require 'rack/test'
 require_relative 'test_helper'
+require_relative '../0pdd'
 
 class AppTest < Test::Unit::TestCase
   include Rack::Test::Methods

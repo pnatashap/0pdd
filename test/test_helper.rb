@@ -23,6 +23,17 @@ $stdout.sync = true
 ENV['RACK_ENV'] = 'test'
 
 require 'simplecov'
+SimpleCov.enable_for_subprocesses true
+SimpleCov.at_fork do |pid|
+  # This needs a unique name so it won't be overwritten
+  SimpleCov.command_name "#{SimpleCov.command_name} (subprocess: #{pid})"
+  # be quiet, the parent process will be in charge of output and checking coverage totals
+  SimpleCov.print_error_status = true
+  SimpleCov.formatter SimpleCov::Formatter::SimpleFormatter
+  SimpleCov.minimum_coverage 10
+  # start
+  SimpleCov.start
+end
 SimpleCov.start
 puts 'SimpleCov is started'
 
