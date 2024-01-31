@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 require 'test/unit'
-require_relative 'test__helper'
+require_relative 'test_helper'
 require_relative '../objects/jobs/job_detached'
 
 # JobDetached test.

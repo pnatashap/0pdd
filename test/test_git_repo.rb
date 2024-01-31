@@ -20,7 +20,7 @@
 
 require 'test/unit'
 require 'tmpdir'
-require_relative 'test__helper'
+require_relative 'test_helper'
 require_relative '../objects/git_repo'
 require_relative '../objects/user_error'
 

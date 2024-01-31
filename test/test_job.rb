@@ -21,7 +21,7 @@
 require 'nokogiri'
 require 'test/unit'
 require 'tmpdir'
-require_relative 'test__helper'
+require_relative 'test_helper'
 require_relative 'fake_repo'
 require_relative 'fake_github'
 require_relative 'fake_tickets'

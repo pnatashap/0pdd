@@ -26,6 +26,8 @@ SimpleCov.start
 require 'simplecov-cobertura'
 SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 
+require 'test/unit'
+
 def object(hash)
   json = hash.to_json
   JSON.parse(json, object_class: OpenStruct)

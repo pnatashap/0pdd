@@ -20,7 +20,7 @@
 
 require 'test/unit'
 require 'mocha/test_unit'
-require_relative 'test__helper'
+require_relative 'test_helper'
 require_relative '../objects/tickets/sentry_tickets'
 
 # SentryTickets test.

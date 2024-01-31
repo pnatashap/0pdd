@@ -20,7 +20,7 @@
 
 require 'test/unit'
 require 'yaml'
-require_relative 'test__helper'
+require_relative 'test_helper'
 require_relative '../objects/tickets/commit_tickets'
 
 # CommitTickets test.

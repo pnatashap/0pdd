@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 require 'test/unit'
-require_relative 'test__helper'
+require_relative 'test_helper'
 require_relative 'fake_github'
 require_relative '../objects/invitations/github_invitations'
 
