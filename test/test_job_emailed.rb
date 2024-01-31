@@ -30,6 +30,11 @@ require_relative '../objects/jobs/job_emailed'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestJobEmailed < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestJobEmailed'
+  end
+
   def fake_job
     job = stub
     job.stubs(:proceed)

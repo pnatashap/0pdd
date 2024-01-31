@@ -27,6 +27,11 @@ require_relative '../objects/jobs/job_detached'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestJobDetached < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestJobDetached'
+  end
+
   def test_simple_scenario
     job = Object.new
     def job.proceed

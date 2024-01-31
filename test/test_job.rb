@@ -34,6 +34,10 @@ require_relative '../objects/storage/safe_storage'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestJob < Test::Unit::TestCase
+  def test_name
+    puts 'Testing... TestJob'
+  end
+
   def test_simple_scenario
     Dir.mktmpdir 'test' do |d|
       repo = FakeRepo.new

@@ -28,6 +28,10 @@ require_relative '../objects/invitations/github_invitations'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestGithubInvitation < Test::Unit::TestCase
+  def test_name
+    puts 'Testing... TestGithubInvitation'
+  end
+
   def test_accepts_organization_invitations
     organizations = %w[github google microsoft zerocracy]
     github = FakeGithub.new(

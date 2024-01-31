@@ -28,6 +28,11 @@ require_relative '../objects/storage/once_storage'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestOnceStorage < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestOnceStorage'
+  end
+
   def test_never_saves_duplicates
     origin = TestStorage.new
     storage = OnceStorage.new(origin)

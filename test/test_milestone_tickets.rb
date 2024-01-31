@@ -29,7 +29,12 @@ require_relative '../objects/tickets/milestone_tickets'
 # Author:: George Aristy (george.aristy@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestGithubTickets < Test::Unit::TestCase
+class TestMilestoneTickets < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestMilestoneTickets'
+  end
+
   def test_sets_milestone
     milestone = 123
     config = YAML.safe_load(

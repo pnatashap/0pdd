@@ -30,6 +30,10 @@ require_relative '../objects/storage/versioned_storage'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestLoggedStorage < Test::Unit::TestCase
+  def test_name
+    puts 'Testing... TestLoggedStorage'
+  end
+
   def test_simple_xml_saving
     storage = LoggedStorage.new(
       VersionedStorage.new(FakeStorage.new, '0.0.1'), FakeLog.new

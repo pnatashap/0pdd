@@ -21,5 +21,15 @@
 require 'simplecov' # this will also pick up whatever config is in .simplecov
 # so ensure it just contains configuration, and doesn't call SimpleCov.start.
 SimpleCov.command_name 'spawn' # As this is not for a test runner directly, script doesn't have a pre-defined base command_name
-SimpleCov.at_fork.call(Process.pid) # Use the per-process setup described previously
+SimpleCov.at_fork do |pid|
+  # This needs a unique name so it won't be overwritten
+  SimpleCov.command_name "#{SimpleCov.command_name} (subprocess: #{pid})"
+  # be quiet, the parent process will be in charge of output and checking coverage totals
+  SimpleCov.print_error_status = true
+  require 'simplecov-cobertura'
+  SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+  SimpleCov.minimum_coverage 0
+  # start
+  SimpleCov.start
+end
 SimpleCov.start # only now can we start.

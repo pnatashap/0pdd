@@ -24,6 +24,11 @@ require_relative '../objects/maybe_text'
 
 # Truncated test.
 class TestMaybeText < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestMaybeText'
+  end
+
   def test_nil_input_then_blank
     assert_equal('', MaybeText.new('output', nil).to_s)
   end

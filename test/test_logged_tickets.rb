@@ -31,6 +31,10 @@ require_relative '../objects/tickets/logged_tickets'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestLoggedTickets < Test::Unit::TestCase
+  def test_name
+    puts 'Testing... TestLoggedTickets'
+  end
+
   def test_submits_tickets
     log = FakeLog.new
     tickets = LoggedTickets.new('yegor256/0pdd', log, FakeTickets.new)

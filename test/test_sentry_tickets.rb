@@ -28,6 +28,11 @@ require_relative '../objects/tickets/sentry_tickets'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestSentryTickets < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestSentryTickets'
+  end
+
   def test_exception_catching_on_submit
     tickets = Object.new
     def tickets.submit(_)

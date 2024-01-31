@@ -6,11 +6,15 @@ require_relative 'test_helper'
 require_relative 'fake_tickets'
 
 # Complicated diff test.
-class TestDiff < Test::Unit::TestCase
+class TestDiffComp < Test::Unit::TestCase
   # @todo #234:15m Add tests for more complicated dynamics, like
   # [here](https://github.com/php-coder/mystamps/issues/695#issuecomment-405372820).
   # Ideally, this tests other cases that can lead to the observed behaviour,
   # but not covered by the test suite.
+
+  def test_name
+    puts 'Testing... TestDiffComp'
+  end
 
   def test_notification_on_parent_solved_with_others_unsolved
     tickets = FakeTickets.new

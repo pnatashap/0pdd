@@ -36,6 +36,11 @@ require_relative '../objects/storage/versioned_storage'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestPuzzles < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestPuzzles'
+  end
+
   def test_all_xml
     Dir.mktmpdir 'test' do |d|
       test_xml(d, 'simple.xml')

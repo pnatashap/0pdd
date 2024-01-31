@@ -30,6 +30,11 @@ require_relative 'fake_tickets'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestDiff < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestDiff'
+  end
+
   def test_notification_on_one_new_puzzle
     tickets = FakeTickets.new
     Diff.new(

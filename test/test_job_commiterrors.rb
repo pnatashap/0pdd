@@ -28,6 +28,10 @@ require_relative '../objects/jobs/job_commiterrors'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestJobCommitErrors < Test::Unit::TestCase
+  def test_name
+    puts 'Testing... TestCommitErrors'
+  end
+
   class Stub
     attr_reader :name, :reported, :repo
 

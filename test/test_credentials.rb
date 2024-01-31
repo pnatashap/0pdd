@@ -32,6 +32,11 @@ require_relative '../objects/vcs/github'
 require_relative '../objects/git_repo'
 
 class CredentialsTest < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... CredentialsTest'
+  end
+
   def test_connects_to_git_via_ssh
     cfg = config
     Dir.mktmpdir 'test' do |d|

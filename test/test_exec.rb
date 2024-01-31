@@ -28,6 +28,11 @@ require_relative '../objects/user_error'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestExec < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestExec'
+  end
+
   def test_simple_bash_call
     assert(Exec.new('echo 123').run.start_with?("123\n"))
   end

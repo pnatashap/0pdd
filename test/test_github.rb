@@ -27,6 +27,11 @@ require_relative '../objects/clients/github'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestGithub < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestGitRepo'
+  end
+
   def test_configures_everything_right
     github = Github.new.client
     assert_equal('0pdd', github.user('0pdd')[:login],

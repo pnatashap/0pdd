@@ -27,6 +27,11 @@ require_relative '../objects/clients/gitlab'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestGitlab < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestGitlab'
+  end
+
   def test_configures_everything_right
     gitlab = GitlabClient.new.client
     assert_raises Gitlab::Error::MissingCredentials do

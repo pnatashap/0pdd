@@ -29,6 +29,11 @@ require_relative '../objects/user_error'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestGitRepo < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestGitRepo'
+  end
+
   def test_clone_and_pull
     Dir.mktmpdir 'test' do |d|
       _, uri = git(d)

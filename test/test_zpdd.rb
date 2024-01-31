@@ -27,6 +27,9 @@ require_relative '../0pdd'
 class AppTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
+  def test_name
+    puts 'Testing... AppTest'
+  end
   def app
     Sinatra::Application
   end

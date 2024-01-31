@@ -27,6 +27,11 @@ require_relative '../objects/truncated'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestTruncated < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestTruncated'
+  end
+
   def test_simple_formatting
     assert_equal('How...', Truncated.new('How are you?', 7).to_s)
   end

@@ -30,6 +30,11 @@ require_relative '../objects/dynamo'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestLog < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestLog'
+  end
+
   def test_put_and_check
     log = Log.new(Dynamo.new.aws, 'yegor256/0pdd')
     tag = 'some-tag'

@@ -32,6 +32,10 @@ require_relative '../objects/storage/versioned_storage'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestUpgradedStorage < Test::Unit::TestCase
+  def test_name
+    puts 'Testing... TestUpgradedStorage'
+  end
+
   def test_safety_preserved
     fake = FakeStorage.new
     fake.save(Nokogiri::XML('<puzzles/>'))

@@ -28,6 +28,11 @@ require_relative '../objects/tickets/commit_tickets'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestCommitTickets < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestCommitTickets'
+  end
+
   def test_submits_tickets
     config = YAML.safe_load(
       "

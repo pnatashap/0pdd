@@ -28,6 +28,10 @@ require_relative '../objects/storage/cached_storage'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestCachedStorage < Test::Unit::TestCase
+  def test_name
+    puts 'Testing... TestCachedStorage'
+  end
+
   def test_simple_xml_loading
     Dir.mktmpdir do |dir|
       storage = CachedStorage.new(FakeStorage.new, File.join(dir, 'a/b/z.xml'))

@@ -30,6 +30,11 @@ require_relative '../objects/storage/safe_storage'
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
 class TestSafeStorage < Test::Unit::TestCase
+
+  def test_name
+    puts 'Testing... TestSafeStorage'
+  end
+
   def test_accepts_valid_xml
     storage = SafeStorage.new(FakeStorage.new)
     storage.save(
