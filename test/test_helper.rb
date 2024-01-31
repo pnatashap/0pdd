@@ -27,6 +27,7 @@ require 'simplecov-cobertura'
 SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 
 require_relative '../0pdd'
+require 'test/unit'
 
 def object(hash)
   json = hash.to_json
