@@ -2,7 +2,6 @@ require 'nokogiri'
 require 'ostruct'
 require 'test/unit'
 require_relative '../objects/diff'
-require_relative 'test_helper'
 require_relative 'fake_tickets'
 
 # Complicated diff test.
