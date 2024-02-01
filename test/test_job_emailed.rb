@@ -19,6 +19,7 @@
 # SOFTWARE.
 
 require 'minitest/autorun'
+require 'test/unit'
 require 'mocha/test_unit'
 require_relative 'test_helper'
 require_relative 'fake_repo'
