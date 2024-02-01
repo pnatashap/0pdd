@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'mocha/test_unit'
 require_relative 'test_helper'
 require_relative 'fake_repo'
@@ -29,7 +29,7 @@ require_relative '../objects/jobs/job_emailed'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestJobEmailed < Test::Unit::TestCase
+class TestJobEmailed < Minitest::Test
 
   def test_name
     puts 'Testing... TestJobEmailed'

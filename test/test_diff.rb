@@ -20,7 +20,7 @@
 
 require 'nokogiri'
 require 'ostruct'
-require 'test/unit'
+require 'minitest/autorun'
 require_relative '../objects/diff'
 require_relative 'fake_tickets'
 
@@ -28,7 +28,7 @@ require_relative 'fake_tickets'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestDiff < Test::Unit::TestCase
+class TestDiff < Minitest::Test
 
   def test_name
     puts 'Testing... TestDiff'

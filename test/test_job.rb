@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 require 'nokogiri'
-require 'test/unit'
+require 'minitest/autorun'
 require 'tmpdir'
 require_relative 'test_helper'
 require_relative 'fake_repo'
@@ -33,7 +33,7 @@ require_relative '../objects/storage/safe_storage'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestJob < Test::Unit::TestCase
+class TestJob < Minitest::Test
   def test_name
     puts 'Testing... TestJob'
   end

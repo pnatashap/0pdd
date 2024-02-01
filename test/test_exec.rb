@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require_relative 'test_helper'
 require_relative '../objects/exec'
 require_relative '../objects/user_error'
@@ -27,7 +27,7 @@ require_relative '../objects/user_error'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestExec < Test::Unit::TestCase
+class TestExec < Minitest::Test
 
   def test_name
     puts 'Testing... TestExec'

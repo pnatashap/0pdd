@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'mail'
 require 'yaml'
 require 'octokit'
@@ -31,7 +31,7 @@ require_relative '../objects/log'
 require_relative '../objects/vcs/github'
 require_relative '../objects/git_repo'
 
-class CredentialsTest < Test::Unit::TestCase
+class CredentialsTest < Minitest::Test
 
   def test_name
     puts 'Testing... CredentialsTest'

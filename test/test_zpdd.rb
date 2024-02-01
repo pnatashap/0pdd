@@ -18,13 +18,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'mocha/test_unit'
 require 'rack/test'
 require_relative 'test_helper'
 require_relative '../0pdd'
 
-class AppTest < Test::Unit::TestCase
+class AppTest < Minitest::Test
   include Rack::Test::Methods
 
   def test_name

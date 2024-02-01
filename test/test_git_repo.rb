@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'tmpdir'
 require_relative 'test_helper'
 require_relative '../objects/git_repo'
@@ -28,7 +28,7 @@ require_relative '../objects/user_error'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestGitRepo < Test::Unit::TestCase
+class TestGitRepo < Minitest::Test
 
   def test_name
     puts 'Testing... TestGitRepo'

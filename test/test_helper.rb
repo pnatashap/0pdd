@@ -29,7 +29,8 @@ SimpleCov.at_fork do |pid|
   SimpleCov.command_name "#{SimpleCov.command_name} (subprocess: #{pid})"
   # be quiet, the parent process will be in charge of output and checking coverage totals
   SimpleCov.print_error_status = true
-  SimpleCov.formatter SimpleCov::Formatter::SimpleFormatter
+  require 'simplecov-cobertura'
+  SimpleCov.formatter SimpleCov::Formatter::CoberturaFormatter
   SimpleCov.minimum_coverage 10
   # start
   SimpleCov.start
@@ -40,7 +41,7 @@ puts 'SimpleCov is started'
 require 'simplecov-cobertura'
 SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 
-require 'test/unit'
+require 'minitest/autorun'
 
 def object(hash)
   json = hash.to_json

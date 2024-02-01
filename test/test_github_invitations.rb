@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require_relative 'test_helper'
 require_relative 'fake_github'
 require_relative '../objects/invitations/github_invitations'
@@ -27,7 +27,7 @@ require_relative '../objects/invitations/github_invitations'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestGithubInvitation < Test::Unit::TestCase
+class TestGithubInvitation < Minitest::Test
   def test_name
     puts 'Testing... TestGithubInvitation'
   end

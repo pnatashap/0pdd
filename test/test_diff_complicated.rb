@@ -1,11 +1,11 @@
 require 'nokogiri'
 require 'ostruct'
-require 'test/unit'
+require 'minitest/autorun'
 require_relative '../objects/diff'
 require_relative 'fake_tickets'
 
 # Complicated diff test.
-class TestDiffComp < Test::Unit::TestCase
+class TestDiffComp < Minitest::Test
   # @todo #234:15m Add tests for more complicated dynamics, like
   # [here](https://github.com/php-coder/mystamps/issues/695#issuecomment-405372820).
   # Ideally, this tests other cases that can lead to the observed behaviour,

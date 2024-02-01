@@ -18,12 +18,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require_relative 'test_helper'
 require_relative '../objects/maybe_text'
 
 # Truncated test.
-class TestMaybeText < Test::Unit::TestCase
+class TestMaybeText < Minitest::Test
 
   def test_name
     puts 'Testing... TestMaybeText'

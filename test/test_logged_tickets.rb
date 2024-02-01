@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'nokogiri'
 require 'yaml'
 require_relative 'test_helper'
@@ -30,7 +30,7 @@ require_relative '../objects/tickets/logged_tickets'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestLoggedTickets < Test::Unit::TestCase
+class TestLoggedTickets < Minitest::Test
   def test_name
     puts 'Testing... TestLoggedTickets'
   end
