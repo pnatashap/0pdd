@@ -134,7 +134,7 @@ configure do
   set :ruby_version, Exec.new('ruby -e "print RUBY_VERSION"').run
   set :git_version, Exec.new('git --version | cut -d" " -f 3').run
   set :temp_dir, Dir.mktmpdir('0pdd')
-  if ENV['RACK_ENV'] != 'test'
+  unless ENV['RACK_ENV'] == 'test'
     Thread.new do
       loop do
         sleep(10)

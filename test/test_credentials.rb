@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'mail'
 require 'yaml'
 require 'octokit'
@@ -31,7 +31,7 @@ require_relative '../objects/log'
 require_relative '../objects/vcs/github'
 require_relative '../objects/git_repo'
 
-class CredentialsTest < Test::Unit::TestCase
+class CredentialsTest < Minitest::Test
   def test_connects_to_git_via_ssh
     cfg = config
     Dir.mktmpdir 'test' do |d|
@@ -126,7 +126,7 @@ class CredentialsTest < Test::Unit::TestCase
   def config
     file = File.join(File.dirname(__FILE__), '../config.yml')
     file = ENV['PDD_CONFIG'] if ENV['PDD_CONFIG']
-    omit unless File.exist?(file)
+    skip unless File.exist?(file)
     YAML.safe_load(File.open(file))
   end
 end

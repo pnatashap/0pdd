@@ -1,17 +1,18 @@
 require 'nokogiri'
 require 'ostruct'
-require 'test/unit'
+require 'minitest/autorun'
+require_relative 'test__helper'
 require_relative '../objects/diff'
 
 # Complicated diff test.
-class TestDiff < Test::Unit::TestCase
+class TestComplicatedDiff < Minitest::Test
   # @todo #234:15m Add tests for more complicated dynamics, like
   # [here](https://github.com/php-coder/mystamps/issues/695#issuecomment-405372820).
   # Ideally, this tests other cases that can lead to the observed behaviour,
   # but not covered by the test suite.
 
   def test_notification_on_parent_solved_with_others_unsolved
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     before = Nokogiri::XML(
       '<puzzles>
         <puzzle alive="true">
@@ -45,17 +46,5 @@ class TestDiff < Test::Unit::TestCase
       '999 2 puzzles [#100](), [#13]() are still not solved; solved: [#101]().',
       "Text is wrong: #{tickets.messages[0]}"
     )
-  end
-
-  class Tickets
-    attr_reader :messages
-
-    def initialize
-      @messages = []
-    end
-
-    def notify(ticket, text)
-      @messages << "#{ticket} #{text}"
-    end
   end
 end

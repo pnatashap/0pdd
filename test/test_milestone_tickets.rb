@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'nokogiri'
 require 'yaml'
 require 'fake_github'
@@ -29,7 +29,7 @@ require_relative '../objects/tickets/milestone_tickets'
 # Author:: George Aristy (george.aristy@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestGithubTickets < Test::Unit::TestCase
+class TestMilestoneTickets < Minitest::Test
   def test_sets_milestone
     milestone = 123
     config = YAML.safe_load(

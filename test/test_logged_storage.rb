@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require_relative 'test__helper'
 require_relative 'fake_storage'
 require_relative 'fake_log'
@@ -29,7 +29,7 @@ require_relative '../objects/storage/versioned_storage'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestLoggedStorage < Test::Unit::TestCase
+class TestLoggedStorage < Minitest::Test
   def test_simple_xml_saving
     storage = LoggedStorage.new(
       VersionedStorage.new(FakeStorage.new, '0.0.1'), FakeLog.new

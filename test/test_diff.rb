@@ -20,16 +20,17 @@
 
 require 'nokogiri'
 require 'ostruct'
-require 'test/unit'
+require 'minitest/autorun'
+require_relative 'test__helper'
 require_relative '../objects/diff'
 
 # Diff test.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestDiff < Test::Unit::TestCase
+class TestDiff < Minitest::Test
   def test_notification_on_one_new_puzzle
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     Diff.new(
       Nokogiri::XML('<puzzles/>'),
       Nokogiri::XML(
@@ -61,7 +62,7 @@ class TestDiff < Test::Unit::TestCase
   end
 
   def test_notification_unknown_issue
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     xml = File.open('test-assets/puzzles/notify-unknown-open-issues.xml') do |f|
       Nokogiri::XML(f)
     end
@@ -77,7 +78,7 @@ class TestDiff < Test::Unit::TestCase
   end
 
   def test_notification_on_two_new_puzzles
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     Diff.new(
       Nokogiri::XML('<puzzles/>'),
       Nokogiri::XML(
@@ -117,7 +118,7 @@ class TestDiff < Test::Unit::TestCase
   end
 
   def test_notification_on_solved_puzzle
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     before = Nokogiri::XML(
       '<puzzles>
         <puzzle alive="true">
@@ -142,7 +143,7 @@ class TestDiff < Test::Unit::TestCase
   end
 
   def test_notification_on_one_solved_puzzle
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     before = Nokogiri::XML(
       '<puzzles>
         <puzzle alive="true">
@@ -179,7 +180,7 @@ class TestDiff < Test::Unit::TestCase
   end
 
   def test_notification_on_update
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     before = Nokogiri::XML(
       '<puzzles>
         <puzzle alive="true">
@@ -209,7 +210,7 @@ class TestDiff < Test::Unit::TestCase
   end
 
   def test_quiet_when_no_changes
-    tickets = Tickets.new
+    tickets = FakeTickets.new
     xml = '<puzzles>
       <puzzle alive="true">
         <id>1-abcdef</id>
@@ -229,17 +230,5 @@ class TestDiff < Test::Unit::TestCase
       Nokogiri::XML(xml)
     ).notify(tickets)
     assert(tickets.messages.empty?)
-  end
-
-  class Tickets
-    attr_reader :messages
-
-    def initialize
-      @messages = []
-    end
-
-    def notify(ticket, text)
-      @messages << "#{ticket} #{text}"
-    end
   end
 end

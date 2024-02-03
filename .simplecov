@@ -19,21 +19,41 @@
 # SOFTWARE.
 
 SimpleCov.formatter = if Gem.win_platform?
-  SimpleCov::Formatter::MultiFormatter[
-    SimpleCov::Formatter::HTMLFormatter
-  ]
-else
-  SimpleCov::Formatter::MultiFormatter.new(
-    SimpleCov::Formatter::HTMLFormatter
-  )
+                        SimpleCov::Formatter::MultiFormatter[
+                          SimpleCov::Formatter::HTMLFormatter
+                        ]
+                      else
+                        SimpleCov::Formatter::MultiFormatter.new(
+                          SimpleCov::Formatter::HTMLFormatter
+                        )
+                      end
+
+SimpleCov.enable_for_subprocesses true
+SimpleCov.at_fork do |pid|
+  # This needs a unique name so it won't be overwritten
+  SimpleCov.command_name "#{SimpleCov.command_name} (subprocess: #{pid})"
+  # be quiet, the parent process will be in charge of output and checking coverage totals
+  SimpleCov.print_error_status = true
+  SimpleCov.formatter SimpleCov::Formatter::SimpleFormatter
+  SimpleCov.minimum_coverage 10
+  # start
+  SimpleCov.start
 end
 
 SimpleCov.start do
+  puts "SimpleCov start #{Process.pid}"
   add_filter '/test/'
   add_filter '/test-assets/'
-  add_filter '/features/'
   add_filter '/assets/'
   add_filter '/dynamodb-local/'
   add_filter '/public/'
-  minimum_coverage 34
+  minimum_coverage 34 if ENV['RACK_ENV'] == 'test'
+end
+
+SimpleCov.at_exit do
+  SimpleCov.result.format!
+  puts "SimpleCov exit #{Process.pid}"
+
+  SimpleCov.command_name 'test:unit' if ENV['RACK_ENV'] == 'test'
+  SimpleCov.start
 end
