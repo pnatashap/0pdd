@@ -18,7 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
+require 'minitest/assertions'
 require 'tmpdir'
 require_relative 'test__helper'
 require_relative '../objects/git_repo'
@@ -28,7 +29,7 @@ require_relative '../objects/user_error'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestGitRepo < Test::Unit::TestCase
+class TestGitRepo < Minitest::Test
   def test_clone_and_pull
     Dir.mktmpdir 'test' do |d|
       _, uri = git(d)
@@ -73,9 +74,7 @@ class TestGitRepo < Test::Unit::TestCase
         git commit --quiet --amend --message 'zz'
       ").run
       repo.push
-      assert_raises UserError do
-        repo.xml
-      end
+      assert_raises(UserError) { repo.xml }
     end
   end
 
@@ -138,7 +137,7 @@ class TestGitRepo < Test::Unit::TestCase
   end
 
   def test_doesnt_touch_crlf
-    omit
+    skip
     # I can't reproduce the problem of #125. The code works as it should
     # be, however in production it fails due to some issues with CRLF
     # in binary files.

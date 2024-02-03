@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require_relative 'test__helper'
 require_relative 'fake_storage'
 require_relative '../objects/storage/once_storage'
@@ -27,8 +27,9 @@ require_relative '../objects/storage/once_storage'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestOnceStorage < Test::Unit::TestCase
+class TestOnceStorage < Minitest::Test
   def test_never_saves_duplicates
+    puts 'testing once storage nsd'
     origin = TestStorage.new
     storage = OnceStorage.new(origin)
     storage.save(Nokogiri::XML('<test>hello</test>'))
@@ -36,6 +37,7 @@ class TestOnceStorage < Test::Unit::TestCase
   end
 
   def test_saves_only_once
+    puts 'testing once storage soo'
     origin = TestStorage.new
     storage = OnceStorage.new(origin)
     storage.save(Nokogiri::XML('<test>bye</test>'))
@@ -58,3 +60,5 @@ class TestOnceStorage < Test::Unit::TestCase
     end
   end
 end
+
+puts 'testing once storage'

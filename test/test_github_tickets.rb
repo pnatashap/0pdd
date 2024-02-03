@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'nokogiri'
 require 'yaml'
 require_relative 'test__helper'
@@ -28,7 +28,7 @@ require_relative '../objects/tickets/tickets'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestGithubTickets < Test::Unit::TestCase
+class TestGithubTickets < Minitest::Test
   def test_submits_tickets
     config = YAML.safe_load(
       "

@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'nokogiri'
 require_relative 'test__helper'
 require_relative 'fake_storage'
@@ -29,7 +29,7 @@ require_relative '../objects/storage/versioned_storage'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestVersionedStorage < Test::Unit::TestCase
+class TestVersionedStorage < Minitest::Test
   def test_xml_versioning
     version = '0.0.1'
     storage = VersionedStorage.new(FakeStorage.new, version)

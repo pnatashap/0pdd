@@ -18,8 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require 'test/unit'
-require 'mocha/test_unit'
+require 'minitest/autorun'
+require 'mocha/minitest'
 require_relative 'test__helper'
 require_relative '../objects/jobs/job_commiterrors'
 
@@ -27,7 +27,7 @@ require_relative '../objects/jobs/job_commiterrors'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2016-2024 Yegor Bugayenko
 # License:: MIT
-class TestJobCommitErrors < Test::Unit::TestCase
+class TestJobCommitErrors < Minitest::Test
   class Stub
     attr_reader :name, :reported, :repo
 

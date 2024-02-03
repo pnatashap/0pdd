@@ -22,9 +22,13 @@ ENV['RACK_ENV'] = 'test'
 
 require 'simplecov'
 SimpleCov.start
+puts "SimpleCov start helper #{Process.pid}"
 
 require 'simplecov-cobertura'
 SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+
+require 'minitest/autorun'
+require_relative '../0pdd'
 
 def object(hash)
   json = hash.to_json
